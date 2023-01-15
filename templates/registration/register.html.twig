@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <h1>Register</h1>
+
+    {{ form_start(registrationForm) }}
+		<div class="my-custom-class-for-errors">
+			{{ form_errors(registrationForm) }}
+		</div>
+		<div class="row"><div class="col-md-6">{{ form_row(registrationForm.first_name, { 'attr' : { 'class': 'form-control' } }) }}</div></div>
+		<div class="row"><div class="col-md-6">{{ form_row(registrationForm.last_name, { 'attr' : { 'class': 'form-control' } }) }}</div></div>
+		<div class="row"><div class="col-md-6">{{ form_row(registrationForm.email, { 'attr' : { 'class': 'form-control' } }) }}</div></div>
+		<div class="row"><div class="col-md-6">{{ form_row(registrationForm.plainPassword,  { 'attr' : { 'class': 'form-control' } }) }}</div></div>
+		<div class="row"><div class="col-md-6">{{ form_row(registrationForm.type, { 'attr' : { 'class': 'form-control' } }) }}</div></div>
+		<div class="row"><div class="col-md-6">{{ form_row(registrationForm.status) }}</div></div>
+		<div class="row"><div class="col-md-6">{{ form_row(registrationForm.roles) }}</div></div>
+		<div class="row"><div class="col-md-6">{{ form_row(registrationForm.agreeTerms) }}</div></div>
+
+        <button type="submit" class="btn btn-primary">Register</button>
+    {{ form_end(registrationForm) }}
+{% endblock %}
